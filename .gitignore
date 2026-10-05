@@ -1,0 +1,53 @@
+# Logs
+logs
+*.log
+!/update.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+other
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+.output
+
+logapi.zhipin.*.pem
+
+/local
+
+/.env*
+
+.wxt
+
+/temp
+
+# Local agent worktrees are not application source
+/.claude/worktrees/
+/.claude/launch.json
+/demo/.nuxt-ui/
+
+# Public snapshot: exclude private material and retired screenshots
+/.claude/
+**/.env*
+*.har
+*.pem
+*.key
+/docs/img/QQ*.png
+/docs/img/shot_*.png
+/docs/img/tg.png

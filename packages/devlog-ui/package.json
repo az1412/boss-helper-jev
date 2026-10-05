@@ -1,0 +1,69 @@
+{
+  "name": "devlog-ui",
+  "version": "1.1.0",
+  "description": "Feature-rich browser dev-logger with UI overlay and pop-out window. Zero overhead in production.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./noop": {
+      "types": "./dist/noop.d.ts",
+      "import": "./dist/noop.js",
+      "require": "./dist/noop.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "logger",
+    "debug",
+    "console",
+    "devtools",
+    "browser",
+    "development",
+    "debugging",
+    "log-viewer",
+    "overlay"
+  ],
+  "author": "Alexander Remer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Oko-Tester/devlog-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Oko-Tester/devlog-ui/issues"
+  },
+  "homepage": "https://devlog-ui.okotester.de/",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
+    "eslint": "^9.18.0",
+    "jsdom": "^27.4.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vite-plugin-dts": "^4.3.0",
+    "vitest": "^2.1.8"
+  }
+}

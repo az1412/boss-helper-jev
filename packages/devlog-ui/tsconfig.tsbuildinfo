@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/noop.ts","./src/channel/broadcast.ts","./src/core/error-capture.ts","./src/core/logger.ts","./src/core/persistence.ts","./src/core/types.ts","./src/ui/filter.ts","./src/ui/log-entry.ts","./src/ui/overlay.ts","./src/ui/popout.ts","./src/ui/styles.ts"],"version":"5.9.3"}

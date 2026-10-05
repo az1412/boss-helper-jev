@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "Boss Helper Jev - 求职辅助扩展"
+  },
+  "extDescription": {
+    "message": "基于开源 boss-helper 的二次开发版本，提供 Jev 语义筛选、岗位处理与招呼辅助、运行日志和配置管理。"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "description": "Anonymized outcome trace. b=basic reject, j=AI reject, s=sent. Order follows terminal logs, not guaranteed original list order.",
+  "observedSeconds": 1256.072,
+  "observedOverlapSpanSeconds": 87.181,
+  "batches": [
+    "bbbbbbbbbbbbbjjbjssjjbjjbbsbjssjbbbbbjjbbjjsjjjbbbjbbbjjjbsjsjjbbbjbjbjjbbbbbjsjbjbjbbjjjbjsjjjjjbbbjbjbjjbsjbbbbjbbjjssbjbjjjjjjbsjbbjbjjbjbjbbbbjbjj",
+    "bjbbbjsbsjjbbbb",
+    "jjbjbbjjjbjjjjb",
+    "bjjjbbjjbbbjbbj",
+    "bsjjjjbjjjjbbjb",
+    "bjjbjbjjjbjbjjb",
+    "jjjsjjbjjbjjjbj",
+    "jjjbbjjbjbjjbbb",
+    "bjbbbbbjbbbbjjj",
+    "jjbjjbjjjjjjbbs",
+    "bjbjjjjsjjjjsjj"
+  ]
+}

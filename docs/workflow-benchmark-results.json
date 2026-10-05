@@ -1,0 +1,131 @@
+{
+  "kind": "offline controlled virtual-clock scheduler benchmark; not live upstream A/B",
+  "baseline": "09df246399bd4edd4a1e35793bfe028e23578330",
+  "baselineWorkflowSha256": "d5cf2703859a96f60658a5f3dee9c481f258e138a5335bb329cf93fda16f0aa4",
+  "currentWorkflowSha256": "2680b2754f7f1f7b5601c1777493e2bc74c24537e8071845a5ffe3d5d2d84718",
+  "orderCaveat": "Anonymous terminal-log order; original list order and API durations are unavailable.",
+  "results": [
+    {
+      "scenario": "trace-fixed-waits-only",
+      "latencyMs": {
+        "detail": 0,
+        "model": 0,
+        "send": 0,
+        "greeting": 0
+      },
+      "measured": [
+        {
+          "version": "upstream",
+          "seconds": 2133,
+          "sends": 21,
+          "rejected": 279,
+          "modelCalls": 169,
+          "maxActiveSends": 1,
+          "minSendIntervalSeconds": 5
+        },
+        {
+          "version": "fast",
+          "seconds": 738,
+          "sends": 21,
+          "rejected": 279,
+          "modelCalls": 169,
+          "maxActiveSends": 1,
+          "minSendIntervalSeconds": 5
+        },
+        {
+          "version": "sorted",
+          "seconds": 738,
+          "sends": 21,
+          "rejected": 279,
+          "modelCalls": 169,
+          "maxActiveSends": 1,
+          "minSendIntervalSeconds": 5
+        }
+      ]
+    },
+    {
+      "scenario": "trace-controlled-latency",
+      "latencyMs": {
+        "detail": 200,
+        "model": 1000,
+        "send": 300,
+        "greeting": 10000
+      },
+      "measured": [
+        {
+          "version": "upstream",
+          "seconds": 2578.3,
+          "sends": 21,
+          "rejected": 279,
+          "modelCalls": 169,
+          "maxActiveSends": 1,
+          "minSendIntervalSeconds": 16.5
+        },
+        {
+          "version": "fast",
+          "seconds": 1048.1,
+          "sends": 21,
+          "rejected": 279,
+          "modelCalls": 169,
+          "maxActiveSends": 1,
+          "minSendIntervalSeconds": 15.3
+        },
+        {
+          "version": "sorted",
+          "seconds": 1183.3,
+          "sends": 21,
+          "rejected": 279,
+          "modelCalls": 169,
+          "maxActiveSends": 1,
+          "minSendIntervalSeconds": 15.3
+        }
+      ]
+    },
+    {
+      "scenario": "all-pass-control",
+      "latencyMs": {
+        "detail": 0,
+        "model": 0,
+        "send": 0,
+        "greeting": 0
+      },
+      "measured": [
+        {
+          "version": "upstream",
+          "seconds": 503,
+          "sends": 100,
+          "rejected": 0,
+          "modelCalls": 100,
+          "maxActiveSends": 1,
+          "minSendIntervalSeconds": 5
+        },
+        {
+          "version": "fast",
+          "seconds": 503,
+          "sends": 100,
+          "rejected": 0,
+          "modelCalls": 100,
+          "maxActiveSends": 1,
+          "minSendIntervalSeconds": 5
+        },
+        {
+          "version": "sorted",
+          "seconds": 503,
+          "sends": 100,
+          "rejected": 0,
+          "modelCalls": 100,
+          "maxActiveSends": 1,
+          "minSendIntervalSeconds": 5
+        }
+      ]
+    }
+  ],
+  "realLogProjection": {
+    "observedSeconds": 1256.072,
+    "skippedIntervalSavingsSeconds": 1395,
+    "sameWorkUpstreamEstimateSeconds": 2651.072,
+    "estimatedTimeReductionPercent": 52.62022306448108,
+    "estimatedThroughputRatio": 2.1106051245470008,
+    "note": "Assumes identical decisions/API costs and 5-second interval; excludes extra serialization cost and different model speeds."
+  }
+}

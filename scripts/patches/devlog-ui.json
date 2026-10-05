@@ -1,0 +1,19 @@
+{
+  "upstream": "https://github.com/Ocyss/devlog-ui",
+  "baseCommit": "2754bee64a7fc263b287926123acefc39d77107e",
+  "patch": "0001-devlog-ui-jev.patch",
+  "files": {
+    "src/core/logger.ts": {
+      "base": "acbf8732b78407e743ee19f92be3e54ee9665abf1472bb1704a9fb7799b402ac",
+      "patched": "fe5d7198acf27a4d44e1c74b71892ddecfb6d13ca37b8eb03648fae6ea0eac7e"
+    },
+    "src/channel/broadcast.ts": {
+      "base": "fd0c3ab747fa69bcc55850435bb4f215c89551daf39560d133e80914b4576bc8",
+      "patched": "197c5b03a1253f7e872951d76fc12ceb879fc674a1526cc587b6738c963e9d83"
+    },
+    "src/core/redaction.ts": {
+      "base": null,
+      "patched": "f303a58407ce784e25b46ff5b640418132d75239650e3e753b32fb94a9135146"
+    }
+  }
+}
