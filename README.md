@@ -2,7 +2,7 @@
 
 用于 BOSS 直聘的岗位筛选与招呼辅助扩展。集中管理求职意向，按基础条件或 AI 判定筛选岗位，并查看每轮进度、成功记录和跳过原因。
 
-基于 [Ocyss/boss-helper](https://github.com/Ocyss/boss-helper) 二次开发，使用 **Bun · Vue 3 · WXT**。当前版本 **0.5.2.2（未发布）**，以 Chrome 为主要验证目标。
+基于 [Ocyss/boss-helper](https://github.com/Ocyss/boss-helper) 二次开发，使用 **Bun · Vue 3 · WXT**。当前版本 **[0.5.2.2（预发布版）](https://github.com/az1412/boss-helper-jev/releases/tag/v0.5.2.2)**，于 2026-10-05 发布，以 Chrome 为主要验证目标。
 
 [安装与更新](docs/installation.md) · [首次使用与 AI 配置](docs/getting-started.md) · [更新记录](CHANGELOG.md) · [全部文档](docs/README.md) · [上传说明](docs/publishing.md)
 
@@ -21,7 +21,7 @@
 
 ## 安装
 
-有 Release 时，下载附件中以 `-chrome.zip` 结尾的安装包，解压到固定目录。在 `chrome://extensions` 开启开发者模式，选择「加载已解压的扩展程序」，加载包含 `manifest.json` 的目录。
+从 [本版 Release](https://github.com/az1412/boss-helper-jev/releases/tag/v0.5.2.2) 下载附件中以 `-chrome.zip` 结尾的安装包，解压到固定目录。在 `chrome://extensions` 开启开发者模式，选择「加载已解压的扩展程序」，加载包含 `manifest.json` 的目录。
 
 也可以从完整源码构建。需要 Git 和 Bun，已验证 Bun **1.3.12**：
 

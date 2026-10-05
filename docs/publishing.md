@@ -8,7 +8,7 @@
 
 `packages/devlog-ui/` 已按普通源码目录随附，并保留固定上游基线、补丁及许可证；不需要初始化子模块。源码提交应包含此目录，而不是只有一个未交付的本地子模块引用。
 
-本次创建的本地发布目录已初始化空 Git 仓库，没有提交或远程地址。它设置了仅对该目录生效的匿名提交身份：名称 `Boss Helper Jev`，邮箱 `maintainer@example.invalid`。该邮箱使用保留的 `.invalid` 域名，不是实际联系地址，也不会自动关联 GitHub 账号。
+本目录已于 2026-10-05 提交至 [az1412/boss-helper-jev](https://github.com/az1412/boss-helper-jev)，并发布 [v0.5.2.2 预发布版](https://github.com/az1412/boss-helper-jev/releases/tag/v0.5.2.2)。它设置了仅对该目录生效的匿名提交身份：名称 `Boss Helper Jev`，邮箱 `maintainer@example.invalid`。该邮箱使用保留的 `.invalid` 域名，不是实际联系地址，也不会自动关联 GitHub 账号。
 
 若要将贡献关联到你的 GitHub 账号，在首次提交前使用 GitHub 设置中显示的真实 noreply 邮箱。不要改回私人邮箱。ZIP 不包含 `.git` 配置，解压到新目录后需重新配置：
 
@@ -58,7 +58,7 @@ git diff --cached --check
 
 ## Release 附件
 
-构建产物放到 Releases，不提交 `.output/`。本批次文件见 [脱敏与验证](privacy-release-20261003.md)。
+构建产物放到 Releases，不提交 `.output/`。2026-10-03 脱敏快照见 [脱敏与验证](privacy-release-20261003.md)。本次正式上传附件使用 `boss-helper-jev-0.5.2.2-github-20261005` 前缀，包含本版仓库链接；完整源码对应 Release 标签中的提交。
 
 - Chrome ZIP：根目录包含 `manifest.json`、PDF worker、隐私说明和许可。
 - 完整源码 ZIP：包括日志组件源码、锁文件、补丁、测试和文档，不含任何 `.git`。
@@ -71,4 +71,4 @@ Chrome 包可用 `bun run zip:chrome` 构建。GitHub 自动生成的 Source cod
 
 `.github/workflows/main.yml` 沿用原配置：任意标签推送会构建三个浏览器，并上传到名为 `latest` 的预发布；使用最新 Bun、非冻结安装，没有运行本地测试。
 
-本次没有修改或执行该工作流。准备推送标签时，先确认接受该行为；标签并非没有副作用的版本标记。
+2026-10-05 首次发布时已在 GitHub 停用该工作流，配置文件保留原样。当前 Release 使用本地重新验证的 Chrome 产物，不自动发布未经本次验收的其他浏览器构建。后续需要自动发布时，再审阅并启用或调整工作流。

@@ -2,7 +2,9 @@
 
 本文件记录 Jev 分支的变化。版本号与扩展 `package.json` 一致；「未发布」表示尚未创建本版公开 Release。
 
-## 0.5.2.2（未发布）
+## 0.5.2.2（预发布版 · 2026-10-05）
+
+[GitHub Release](https://github.com/az1412/boss-helper-jev/releases/tag/v0.5.2.2) 已提供 Chrome 安装包、完整源码、文档及 SHA-256 清单。2026-10-05 发布前复验：124 项测试、499 个断言、Lint 和 Chrome 构建通过，源码及交付包密钥扫描无告警。真实发送和收费模型未在本次复验中调用。
 
 ### 新增
 
