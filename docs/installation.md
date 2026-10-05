@@ -4,11 +4,13 @@
 
 ## 使用安装包
 
-1. 在本仓库 **Releases** 页面下载文件名以 `-chrome.zip` 结尾的安装包。若尚无 Release，使用下方源码构建方式。
+1. 普通用户只下载 [Chrome 安装版](https://github.com/az1412/boss-helper-jev/releases/download/v0.5.2.2/00-Boss-Helper-Jev-0.5.2.2-Chrome-Install.zip)，文件名为 `00-Boss-Helper-Jev-0.5.2.2-Chrome-Install.zip`。这是已编译的扩展，包含中文离线安装指南，无需安装开发工具。
 2. 将 ZIP 解压到一个固定目录，确认其中直接包含 `manifest.json`。
 3. 打开 `chrome://extensions`，启用右上角「开发者模式」。
 4. 点击「加载已解压的扩展程序」，选中包含 `manifest.json` 的目录。
 5. 刷新已经打开的 BOSS 直聘标签页，再按 [首次使用指南](getting-started.md) 配置。
+
+完整解压后可双击 `先打开我-安装指南.html` 查看图解步骤。旧的 `-chrome.zip` 是不含新手指南的同版扩展，仅作备用；源码和文档附件供开发或查阅，普通用户无需下载。扩展首次需要在 Chrome 中手动加载一次，安装后保留原解压文件夹。
 
 不要把 ZIP 文件直接拖入作为解压目录。GitHub 自动生成的 **Source code** 是源码，需要构建；它不是扩展安装包。
 
