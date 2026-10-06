@@ -1,9 +1,9 @@
 {
   "name": "boss-helper",
-  "displayName": "Boss Helper Jev",
-  "version": "0.5.2.2",
+  "displayName": "Jev 求职助手",
+  "version": "0.5.2.3",
   "private": true,
-  "description": "基于 boss-helper 的 Jev 语义筛选与求职流程辅助扩展，使用 Bun、WXT、Vue 3、Nuxt UI 4 和 Tailwind CSS 4。",
+  "description": "用 Jev 进行岗位语义筛选与契合度排序，支持快速投递、判定缓存、暂停续跑和过程记录。",
   "workspaces": [
     "packages/*"
   ],

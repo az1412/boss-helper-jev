@@ -12,6 +12,7 @@
 - [贡献指南](../CONTRIBUTING.md)：模块边界、开发命令、验证与 PR 要求。
 - [日志子模块补丁](devlog-patch.md)：固定基线、补丁应用与内容校验。
 - [GitHub 上传与发布清单](publishing.md)：源码、文档、附件及既有工作流行为。
+- [0.5.2.3 发布说明](release-notes-0.5.2.3.md)：更名后的 Chrome 预发布版。
 - [0.5.2.2 发布说明](release-notes-0.5.2.2.md)：可用于 GitHub Release 正文。
 - [第三方来源与许可](../THIRD_PARTY_NOTICES.md)：上游、日志组件、基准快照和依赖说明。
 - [安全问题报告](../SECURITY.md)：敏感问题的报告方式。

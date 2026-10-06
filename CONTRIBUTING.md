@@ -1,6 +1,6 @@
 # 贡献指南
 
-Boss Helper Jev 基于 Ocyss/boss-helper，使用 Bun、WXT、Vue 3、Nuxt UI 和 Tailwind CSS。欢迎有明确问题、范围适当、能说明验证结果的贡献。
+Jev 求职助手 基于 Ocyss/boss-helper，使用 Bun、WXT、Vue 3、Nuxt UI 和 Tailwind CSS。欢迎有明确问题、范围适当、能说明验证结果的贡献。
 
 ## 先确定范围
 

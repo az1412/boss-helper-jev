@@ -1,10 +1,10 @@
 # 安装与更新
 
-当前版本为 **0.5.2.2**。推荐使用最新稳定版 Chrome；当前交付验证以 Chrome 为准。
+当前版本为 **0.5.2.3**。推荐使用最新稳定版 Chrome；当前交付验证以 Chrome 为准。
 
 ## 使用安装包
 
-1. 普通用户只下载 [Chrome 安装版](https://github.com/az1412/boss-helper-jev/releases/download/v0.5.2.2/00-Boss-Helper-Jev-0.5.2.2-Chrome-Install.zip)，文件名为 `00-Boss-Helper-Jev-0.5.2.2-Chrome-Install.zip`。这是已编译的扩展，包含中文离线安装指南，无需安装开发工具。
+1. 普通用户只下载 [Chrome 安装版](https://github.com/az1412/jev-job-helper/releases/download/v0.5.2.3/00-Jev-Job-Helper-0.5.2.3-Chrome-Install.zip)，文件名为 `00-Jev-Job-Helper-0.5.2.3-Chrome-Install.zip`。这是已编译的扩展，包含中文离线安装指南，无需安装开发工具。
 2. 将 ZIP 解压到一个固定目录，确认其中直接包含 `manifest.json`。
 3. 打开 `chrome://extensions`，启用右上角「开发者模式」。
 4. 点击「加载已解压的扩展程序」，选中包含 `manifest.json` 的目录。

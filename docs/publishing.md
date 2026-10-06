@@ -8,7 +8,7 @@
 
 `packages/devlog-ui/` 已按普通源码目录随附，并保留固定上游基线、补丁及许可证；不需要初始化子模块。源码提交应包含此目录，而不是只有一个未交付的本地子模块引用。
 
-本目录已于 2026-10-05 提交至 [az1412/boss-helper-jev](https://github.com/az1412/boss-helper-jev)，并发布 [v0.5.2.2 预发布版](https://github.com/az1412/boss-helper-jev/releases/tag/v0.5.2.2)。它设置了仅对该目录生效的匿名提交身份：名称 `Boss Helper Jev`，邮箱 `maintainer@example.invalid`。该邮箱使用保留的 `.invalid` 域名，不是实际联系地址，也不会自动关联 GitHub 账号。
+本目录已于 2026-10-05 提交至 [az1412/boss-helper-jev](https://github.com/az1412/jev-job-helper)，并发布 [v0.5.2.2 预发布版](https://github.com/az1412/jev-job-helper/releases/tag/v0.5.2.2)。它设置了仅对该目录生效的匿名提交身份：名称 `Boss Helper Jev`，邮箱 `maintainer@example.invalid`。该邮箱使用保留的 `.invalid` 域名，不是实际联系地址，也不会自动关联 GitHub 账号。
 
 若要将贡献关联到你的 GitHub 账号，在首次提交前使用 GitHub 设置中显示的真实 noreply 邮箱。不要改回私人邮箱。ZIP 不包含 `.git` 配置，解压到新目录后需重新配置：
 

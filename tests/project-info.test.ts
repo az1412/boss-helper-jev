@@ -12,9 +12,9 @@ describe('本版来源与远程入口', () => {
 
   test('有效仓库才生成对应反馈与发布链接', () => {
     expect(getProjectLinks()).toEqual({
-      repository: 'https://github.com/az1412/boss-helper-jev',
-      issues: 'https://github.com/az1412/boss-helper-jev/issues',
-      releases: 'https://github.com/az1412/boss-helper-jev/releases',
+      repository: 'https://github.com/az1412/jev-job-helper',
+      issues: 'https://github.com/az1412/jev-job-helper/issues',
+      releases: 'https://github.com/az1412/jev-job-helper/releases',
     })
     expect(getProjectLinks(' https://github.com/example/jev-helper/ ')).toEqual({
       repository: 'https://github.com/example/jev-helper',

@@ -1,4 +1,4 @@
-# Boss Helper Jev
+# Jev 求职助手
 
 用 **Jev 语义判定**筛选 BOSS 直聘岗位：写下目标方向、想要的条件和想避开的要求，查看每项判定与契合度，再选择快速投递或按分数排序。
 
@@ -6,9 +6,9 @@
 
 在 300 个岗位的受控离线对照中，Jev 快速模式将处理用时从 **42 分 58 秒缩短至 17 分 28 秒，减少 59.3%**。提升来自流程调度，完整条件与复现方法见下方性能对比。
 
-当前版本 **[0.5.2.2（预发布版）](https://github.com/az1412/boss-helper-jev/releases/tag/v0.5.2.2)**，以 Chrome 为主要验证目标。
+当前版本 **[0.5.2.3（预发布候选）](https://github.com/az1412/jev-job-helper/releases/tag/v0.5.2.3)**，以 Chrome 为主要验证目标。
 
-**普通用户：[点击下载 Chrome 安装版](https://github.com/az1412/boss-helper-jev/releases/download/v0.5.2.2/00-Boss-Helper-Jev-0.5.2.2-Chrome-Install.zip)**。已经编译好；完整解压后双击 `先打开我-安装指南.html`，按中文步骤加载扩展，无需安装开发工具。
+**普通用户：[点击下载 Chrome 安装版](https://github.com/az1412/jev-job-helper/releases/download/v0.5.2.3/00-Jev-Job-Helper-0.5.2.3-Chrome-Install.zip)**。已经编译好；完整解压后双击 `先打开我-安装指南.html`，按中文步骤加载扩展，无需安装开发工具。
 
 [安装与更新](docs/installation.md) · [首次使用与 AI 配置](docs/getting-started.md) · [性能对比与复现](docs/performance-comparison.md) · [更新记录](CHANGELOG.md) · [全部文档](docs/README.md)
 
@@ -52,9 +52,9 @@ Jev 会结合个人背景与岗位详情，逐项判断「想要 / 想避免」�
 
 Jev 筛选使用 **TypeSafe Key**；招呼仍可选平台默认消息、自定义消息或单独配置的大模型。配置步骤见 [首次使用与 AI 配置](docs/getting-started.md)。
 
-![Boss Helper Jev AI 配置页，使用离线合成数据](docs/img/jev-ai-20261001.png)
+![Jev 求职助手 AI 配置页，使用离线合成数据](docs/img/jev-ai-20261001.png)
 
-*截图来自真实 Vue 组件的离线预览，使用合成资料。更多截图见 [界面验证记录](docs/release-readiness.md#真实组件界面检查)。*
+*截图来自 0.5.2.2 更名前的真实 Vue 组件离线预览，使用合成资料。更多截图见 [界面验证记录](docs/release-readiness.md#真实组件界面检查)。*
 
 ## 能做什么
 
@@ -67,7 +67,7 @@ Jev 筛选使用 **TypeSafe Key**；招呼仍可选平台默认消息、自定�
 
 ## 安装
 
-普通用户只需下载 [Chrome 安装版](https://github.com/az1412/boss-helper-jev/releases/download/v0.5.2.2/00-Boss-Helper-Jev-0.5.2.2-Chrome-Install.zip)，完整解压到固定目录后打开 `先打开我-安装指南.html`。在 `chrome://extensions` 开启开发者模式，选择「加载已解压的扩展程序」，加载包含 `manifest.json` 和安装说明的文件夹。首次仍需手动加载一次，并自行登录 BOSS、填写配置。
+普通用户只需下载 [Chrome 安装版](https://github.com/az1412/jev-job-helper/releases/download/v0.5.2.3/00-Jev-Job-Helper-0.5.2.3-Chrome-Install.zip)，完整解压到固定目录后打开 `先打开我-安装指南.html`。在 `chrome://extensions` 开启开发者模式，选择「加载已解压的扩展程序」，加载包含 `manifest.json` 和安装说明的文件夹。首次仍需手动加载一次，并自行登录 BOSS、填写配置。
 
 也可以从完整源码构建。需要 Git 和 Bun，已验证 Bun **1.3.12**：
 
@@ -110,7 +110,7 @@ git diff --check
 
 技术栈：**Bun · Vue 3 · WXT · Nuxt UI · Tailwind CSS**。
 
-2026-10-05 发布前复验：**124 项离线测试、499 个断言通过**，Lint 与 Chrome 生产构建通过。历史范围与限制见 [验证记录](docs/release-20261002.md)。性能基准已于 2026-10-05 复跑，结果与随附 [基准数据](docs/workflow-benchmark-results.json) 一致。
+2026-10-06 更名版复验：**124 项离线测试、499 个断言通过**，Lint 与 Chrome 生产构建通过。历史范围与限制见 [验证记录](docs/release-20261002.md)。性能基准已于 2026-10-05 复跑，结果与随附 [基准数据](docs/workflow-benchmark-results.json) 一致。
 
 在安装依赖后，可自行复现上面的性能对照；脚本使用虚拟时钟和合成接口响应，不连接 BOSS 或收费 AI：
 
@@ -120,7 +120,7 @@ bun scripts/benchmark-workflow.ts
 
 ## 反馈
 
-反馈请通过 [Issues](https://github.com/az1412/boss-helper-jev/issues) 提供版本、复现步骤和脱敏后的错误提示；安全问题见 [SECURITY.md](SECURITY.md)。安装包见 [Releases](https://github.com/az1412/boss-helper-jev/releases)。
+反馈请通过 [Issues](https://github.com/az1412/jev-job-helper/issues) 提供版本、复现步骤和脱敏后的错误提示；安全问题见 [SECURITY.md](SECURITY.md)。安装包见 [Releases](https://github.com/az1412/jev-job-helper/releases)。
 
 ## 来源与许可
 

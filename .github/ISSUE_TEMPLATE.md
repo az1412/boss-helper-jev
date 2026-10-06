@@ -1,6 +1,6 @@
 ## 版本与环境
 
-- Boss Helper Jev 版本：
+- Jev 求职助手 版本：
 - 浏览器与版本：
 - 安装方式：Chrome ZIP / 完整源码构建 / Git 构建
 - 使用模式：基础筛选 / Jev 快速 / Jev 排序 / 传统 AI

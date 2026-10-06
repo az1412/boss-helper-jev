@@ -1,8 +1,8 @@
 {
   "extName": {
-    "message": "Boss Helper Jev"
+    "message": "Jev Job Helper"
   },
   "extDescription": {
-    "message": "A derivative of the open-source boss-helper project with Jev semantic filtering, job application assistance, activity logs and configuration management."
+    "message": "Jev semantic job filtering, fit-based ranking, fast application workflows, judgment caching and pause/resume controls."
   }
 }

@@ -1,12 +1,12 @@
-# Boss Helper Jev 0.5.2.2
+# Jev 求职助手 0.5.2.3
 
 用 Jev 把求职诉求转成逐项语义判定与契合度评分，支持快速投递、按分数排序、判定缓存和暂停续跑。本版为 Chrome 预发布版。
 
 ## 普通用户下载
 
-**[点击下载：Chrome 安装版（已编译，含中文安装指南）](https://github.com/az1412/jev-job-helper/releases/download/v0.5.2.2/00-Boss-Helper-Jev-0.5.2.2-Chrome-Install.zip)**
+**[点击下载：Chrome 安装版（已编译，含中文安装指南）](https://github.com/az1412/jev-job-helper/releases/download/v0.5.2.3/00-Jev-Job-Helper-0.5.2.3-Chrome-Install.zip)**
 
-只需下载 `00-Boss-Helper-Jev-0.5.2.2-Chrome-Install.zip`，无需安装 Bun、Node.js 或其他开发工具：
+只需下载 `00-Jev-Job-Helper-0.5.2.3-Chrome-Install.zip`，无需安装 Bun、Node.js 或其他开发工具：
 
 1. 将整个 ZIP 完整解压到固定文件夹，双击 `先打开我-安装指南.html`。
 2. Chrome 地址栏输入 `chrome://extensions`，开启「开发者模式」。
@@ -22,7 +22,13 @@
 - **减少重复判断**：预判、执行和暂停续跑复用有效缓存；输入发生变化时重新判断。
 - **受控对照用时减少 59.3%**：同样处理 300 个岗位，串行基线为 42 分 58.3 秒，快速模式为 17 分 28.1 秒。对照保持相同判定结果和 5 秒发送 / 60 秒翻页间隔，注入相同接口耗时；这是离线工作流调度结果，实际收益随过滤率和接口耗时变化。[完整参数与复现方法](https://github.com/az1412/jev-job-helper/blob/main/docs/performance-comparison.md)。
 
-## 主要变化
+## 本次更名
+
+- 项目名称统一为「Jev 求职助手」，GitHub 仓库更名为 `az1412/jev-job-helper`。
+- 扩展界面、浏览器扩展名称和中文安装指南同步更名。
+- 首页与 Release 优先展示 Jev 能力、性能数据和安装入口，来源说明位于末尾。
+
+## 功能
 
 - Jev 支持快速模式和按当前批次排序；本轮成功上限默认 50，与每日额度共同生效。
 - 模型服务与求职配置分别保存，取消编辑不污染已保存配置，高级参数默认折叠。
@@ -36,16 +42,14 @@
 | 附件 | 用途 |
 | --- | --- |
 | `00-…-Chrome-Install.zip` | **普通用户下载这一项即可**，含已编译扩展和中文安装指南 |
-| `…-chrome.zip` | 同版纯扩展备用包，不含安装指南 |
 | `…-source.zip` / GitHub 自动生成的 Source code | 开发者源码，需要安装依赖并构建 |
-| `…-docs.zip` | 离线文档，可选 |
 | `…-SHA256SUMS.txt` | 下载完整性校验，可选 |
 
 更新已有安装请沿用原目录，再在扩展页面点击「重新加载」。点击开始会执行真实沟通。
 
 ## 验证与限制
 
-- 2026-10-05 发布前验证：124 项离线测试、499 个断言通过；Lint 和 Chrome 生产构建通过。
+- 2026-10-06 更名版验证：124 项离线测试、499 个断言通过；Lint 和 Chrome 生产构建通过。
 - 真实 BOSS 发送、收费模型和各 Gemini 中转服务仍需按具体环境验收。
 - 本轮续跑状态在当前标签页内存中，刷新后不能恢复同一轮队列；成功与去重记录另行持久化。
 - 后台请求取消需等待当前响应或配置超时；已发出的消息不能撤回。
@@ -53,7 +57,7 @@
 
 启用 AI 会将相关岗位、提示词和求职资料发送给所配置的服务商，API 费用由服务商收取。详细数据范围、安装方法及来源声明见仓库文档。
 
-[上传内容复审记录](https://github.com/az1412/jev-job-helper/blob/main/docs/privacy-review-20261005.md)。扩展源码与安装产物对应发布提交 `ee4d0d95ea6a84677cc0347f0188fcef70d7496e`，新手包另附中文安装指南。
+[上传内容复审记录](https://github.com/az1412/jev-job-helper/blob/main/docs/privacy-review-20261005.md)。扩展源码与安装产物对应 `v0.5.2.3` 标签，新手包另附中文安装指南。
 
 ## 来源与许可
 

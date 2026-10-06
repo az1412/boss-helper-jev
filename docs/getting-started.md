@@ -1,6 +1,6 @@
 # 首次使用与 AI 配置
 
-先完成 [安装](installation.md)，重新加载扩展后刷新 BOSS 岗位搜索 / 推荐页。以下说明适用于 Boss Helper Jev 0.5.2.2。
+先完成 [安装](installation.md)，重新加载扩展后刷新 BOSS 岗位搜索 / 推荐页。以下说明适用于 Jev 求职助手 0.5.2.3。
 
 ## 先选择使用方式
 

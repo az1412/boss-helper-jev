@@ -11,7 +11,7 @@ parser.add_argument('output_zip', type=Path)
 args = parser.parse_args()
 root = Path(__file__).resolve().parent.parent
 guide = (root / 'docs/chrome-install.html').read_bytes()
-text = '''Boss Helper Jev · Chrome 安装版
+text = '''Jev 求职助手 · Chrome 安装版
 
 1. 先把整个 ZIP 解压到固定文件夹。
 2. 双击「先打开我-安装指南.html」，按中文说明安装。
