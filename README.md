@@ -1,20 +1,24 @@
 # Boss Helper Jev
 
-在原有 BOSS 岗位筛选与招呼流程中接入 **TypeSafe System One（Jev）**：把求职诉求转成逐项语义判定与契合度评分，再通过筛选 / 发送分离、快速模式重叠执行和判定缓存，减少处理整批岗位的时间。
+用 **Jev 语义判定**筛选 BOSS 直聘岗位：写下目标方向、想要的条件和想避开的要求，查看每项判定与契合度，再选择快速投递或按分数排序。
 
-基于 [Ocyss/boss-helper](https://github.com/Ocyss/boss-helper) 二次开发，使用 **Bun · Vue 3 · WXT**。当前版本 **[0.5.2.2（预发布版）](https://github.com/az1412/boss-helper-jev/releases/tag/v0.5.2.2)**，于 2026-10-05 发布，以 Chrome 为主要验证目标。
+**逐条件判断 · 契合度排序 · 筛选与发送重叠 · 判定缓存 · 可暂停续跑**
+
+在 300 个岗位的受控离线对照中，Jev 快速模式将处理用时从 **42 分 58 秒缩短至 17 分 28 秒，减少 59.3%**。提升来自流程调度，完整条件与复现方法见下方性能对比。
+
+当前版本 **[0.5.2.2（预发布版）](https://github.com/az1412/boss-helper-jev/releases/tag/v0.5.2.2)**，以 Chrome 为主要验证目标。
 
 **普通用户：[点击下载 Chrome 安装版](https://github.com/az1412/boss-helper-jev/releases/download/v0.5.2.2/00-Boss-Helper-Jev-0.5.2.2-Chrome-Install.zip)**。已经编译好；完整解压后双击 `先打开我-安装指南.html`，按中文步骤加载扩展，无需安装开发工具。
 
 [安装与更新](docs/installation.md) · [首次使用与 AI 配置](docs/getting-started.md) · [性能对比与复现](docs/performance-comparison.md) · [更新记录](CHANGELOG.md) · [全部文档](docs/README.md)
 
-## 加入 Jev 后，快了多少？
+## 更快处理整批岗位
 
-**300 个岗位、相同通过 / 过滤结果：受控离线对照中，上游工作流用时 42 分 58.3 秒，Jev 快速模式用时 17 分 28.1 秒，用时减少 59.3%，同等工作量的处理速度约为 2.46 倍。**
+**300 个岗位、相同通过 / 过滤结果：受控离线对照中，串行基线用时 42 分 58.3 秒，Jev 快速模式用时 17 分 28.1 秒，用时减少 59.3%，同等工作量的处理速度约为 2.46 倍。**
 
-对照使用本项目所基于的固定上游版本 [`09df246`](https://github.com/Ocyss/boss-helper/tree/09df246399bd4edd4a1e35793bfe028e23578330)，运行双方真实工作流。300 个岗位中，131 个被基础条件过滤、148 个被 AI 过滤、21 个发送成功；保持 **5 秒发送间隔、60 秒翻页间隔**，并为双方注入相同的接口耗时。
+对照运行固定版本的串行工作流与本版真实工作流，基线来源、提交和校验值见 [性能报告](docs/performance-comparison.md#对比基线)。300 个岗位中，131 个被基础条件过滤、148 个被 AI 过滤、21 个发送成功；保持 **5 秒发送间隔、60 秒翻页间隔**，并为双方注入相同的接口耗时。
 
-| 对照场景 | 上游工作流 | Jev 快速模式 | Jev 排序模式 | 快速模式用时减少 |
+| 对照场景 | 串行基线 | Jev 快速模式 | Jev 排序模式 | 快速模式用时减少 |
 | --- | ---: | ---: | ---: | ---: |
 | 300 岗位，注入相同接口耗时 | 42 分 58.3 秒 | **17 分 28.1 秒** | 19 分 43.3 秒 | **59.3%** |
 | 300 岗位，仅比较固定等待，接口耗时设为 0 | 35 分 33 秒 | **12 分 18 秒** | 12 分 18 秒 | **65.4%** |
@@ -24,17 +28,17 @@
 
 **为什么更快：**
 
-- **过滤后直接处理下一条。** 该上游版本每执行一个岗位，都会等待投递间隔，包括被过滤的岗位。Jev 路径将筛选与发送拆开，过滤不进入发送等待。本样本过滤 279 个岗位，仅这一项就少等 **279 × 5 秒 = 23 分 15 秒**；实际发送仍保留间隔。
+- **过滤后直接处理下一条。** 对照基线每执行一个岗位，都会等待投递间隔，包括被过滤的岗位。Jev 路径将筛选与发送拆开，过滤不进入发送等待。本样本过滤 279 个岗位，仅这一项就少等 **279 × 5 秒 = 23 分 15 秒**；实际发送仍保留间隔。
 - **快速模式重叠准备和发送。** 当前岗位发送、追加消息或等待时，提前准备下一条可投岗位。在注入耗时的场景中，快速模式比排序模式再少 **2 分 15.2 秒**；发送保持单飞，只剩最后一个成功名额时不再提前判下一条。
 - **复用已经完成的 Jev 判定。** 预判与执行共用判定结果，暂停后继续可复用有效缓存；同一岗位状态的相同并行请求共用一次调用。岗位输入、求职诉求、问题、模型或严格程度改变时按规则失效，失败结果不缓存。这减少重复请求，缓存收益未计入上表。
 
-另有一次修改版运行日志记录：300 个岗位处理完成用时 **20 分 56 秒**。在相同结果、相同请求耗时和 5 秒间隔的假设下，把过滤等待加回，上游调度估算为 **44 分 11 秒**，对应约 **52.6%** 的用时减少；上游数值是条件估算，未做真实账户 A/B。
+另有一次本版运行日志记录：300 个岗位处理完成用时 **20 分 56 秒**。在相同结果、相同请求耗时和 5 秒间隔的假设下，把过滤等待加回，串行基线估算为 **44 分 11 秒**，对应约 **52.6%** 的用时减少；基线数值是条件估算，未做真实账户 A/B。
 
 这些数值衡量的是 **启用 Jev 后的工作流调度收益**。离线对照固定了等价模型判定结果，不衡量模型推理速度或筛选准确率；实际收益取决于过滤率、接口耗时、批次和额度。关闭 Jev 的普通串行路径不享有这项过滤等待优化，详情与筛选请求也可能更密集。完整方法、参数及匿名结果见 [性能报告](docs/performance-comparison.md) 和 [原始基准数据](docs/workflow-benchmark-results.json)。
 
-## Jev 带来的筛选能力
+## 把求职诉求变成可检查的判断
 
-原项目已有岗位筛选、AI 判定与招呼功能。本版在此基础上增加了从求职诉求到类型化判定、可检查结果和投递顺序的一套流程：
+Jev 会结合个人背景与岗位详情，逐项判断「想要 / 想避免」的条件，并给出整体契合度。你可以看到过滤原因，也可以让当前批次中契合度更高的岗位先进入投递流程：
 
 | 能力 | 本版如何使用 Jev |
 | --- | --- |
@@ -104,6 +108,8 @@ git diff --check
 
 `bun run dev` 启动扩展开发；`bun run demo` 在 `http://127.0.0.1:5174` 展示真实组件的离线样例，不发送消息或请求收费 AI。开发约定见 [贡献指南](CONTRIBUTING.md)，日志子模块安装细节见 [补丁说明](docs/devlog-patch.md)。
 
+技术栈：**Bun · Vue 3 · WXT · Nuxt UI · Tailwind CSS**。
+
 2026-10-05 发布前复验：**124 项离线测试、499 个断言通过**，Lint 与 Chrome 生产构建通过。历史范围与限制见 [验证记录](docs/release-20261002.md)。性能基准已于 2026-10-05 复跑，结果与随附 [基准数据](docs/workflow-benchmark-results.json) 一致。
 
 在安装依赖后，可自行复现上面的性能对照；脚本使用虚拟时钟和合成接口响应，不连接 BOSS 或收费 AI：
@@ -112,10 +118,10 @@ git diff --check
 bun scripts/benchmark-workflow.ts
 ```
 
-## 反馈、来源与许可
+## 反馈
 
-反馈请通过 [本版 Issues](https://github.com/az1412/boss-helper-jev/issues) 提供版本、复现步骤和脱敏后的错误提示；安全问题见 [SECURITY.md](SECURITY.md)。安装包见 [本版 Releases](https://github.com/az1412/boss-helper-jev/releases)，上游的商店、反馈和更新入口不代表本版。
+反馈请通过 [Issues](https://github.com/az1412/boss-helper-jev/issues) 提供版本、复现步骤和脱敏后的错误提示；安全问题见 [SECURITY.md](SECURITY.md)。安装包见 [Releases](https://github.com/az1412/boss-helper-jev/releases)。
 
-本项目保留上游 [MIT License](LICENSE) 与原版权。第三方组件、补丁和基准快照来源见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。本版开发使用 AI 辅助，上游功能和第三方组件不作为独立原创。
+## 来源与许可
 
-感谢 [Ocyss/boss-helper](https://github.com/Ocyss/boss-helper)、[Oko-Tester/devlog-ui](https://github.com/Oko-Tester/devlog-ui) 及依赖维护者；沿用上游对 [boss_batch_push](https://github.com/yangfeng20/boss_batch_push)、[vite-plugin-monkey](https://github.com/lisonge/vite-plugin-monkey)、[GPT_API_free](https://github.com/chatanywhere/GPT_API_free)、[uiverse.io](https://uiverse.io/) 和 MQTT 协议参考资料的致谢。
+本项目基于 [Ocyss/boss-helper](https://github.com/Ocyss/boss-helper) 按 MIT 许可二次开发，在其岗位筛选与招呼流程基础上加入 Jev 集成、判定缓存、快速 / 排序模式及流程修复；开发使用了 AI 辅助。感谢原项目、[devlog-ui](https://github.com/Oko-Tester/devlog-ui) 和依赖维护者。原版权及完整许可见 [LICENSE](LICENSE)，第三方来源与基准快照说明见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

@@ -1,6 +1,26 @@
 # Boss Helper Jev 0.5.2.2
 
-基于 Ocyss/boss-helper 的 Jev 二次开发测试版，提供语义筛选、求职意向管理、可暂停的投递流程和发送历史。建议作为 Pre-release 发布。
+用 Jev 把求职诉求转成逐项语义判定与契合度评分，支持快速投递、按分数排序、判定缓存和暂停续跑。本版为 Chrome 预发布版。
+
+## 普通用户下载
+
+**[点击下载：Chrome 安装版（已编译，含中文安装指南）](https://github.com/az1412/boss-helper-jev/releases/download/v0.5.2.2/00-Boss-Helper-Jev-0.5.2.2-Chrome-Install.zip)**
+
+只需下载 `00-Boss-Helper-Jev-0.5.2.2-Chrome-Install.zip`，无需安装 Bun、Node.js 或其他开发工具：
+
+1. 将整个 ZIP 完整解压到固定文件夹，双击 `先打开我-安装指南.html`。
+2. Chrome 地址栏输入 `chrome://extensions`，开启「开发者模式」。
+3. 点击「加载已解压的扩展程序」，选择包含 `manifest.json` 和安装说明的文件夹。
+4. 登录或刷新 BOSS 岗位页，保存配置后使用。首次建议将本轮目标设为 1–3，核对消息后再开始。
+
+首次需要手动加载一次，并自行填写配置。基础筛选 + 平台默认招呼无需 AI Key；Jev 筛选使用 TypeSafe Key。
+
+## Jev 的能力与性能
+
+- **逐条件语义判定**：结合岗位详情、个人背景与「想要 / 想避免」的条件，返回逐条概率和 0–5 的契合度，展示过滤原因。
+- **快速或按分数投递**：快速模式将下一条的准备与当前发送流程重叠；排序模式先完成当前批次判定，再按契合度降序投递。
+- **减少重复判断**：预判、执行和暂停续跑复用有效缓存；输入发生变化时重新判断。
+- **受控对照用时减少 59.3%**：同样处理 300 个岗位，串行基线为 42 分 58.3 秒，快速模式为 17 分 28.1 秒。对照保持相同判定结果和 5 秒发送 / 60 秒翻页间隔，注入相同接口耗时；这是离线工作流调度结果，实际收益随过滤率和接口耗时变化。[完整参数与复现方法](https://github.com/az1412/boss-helper-jev/blob/main/docs/performance-comparison.md)。
 
 ## 主要变化
 
@@ -11,20 +31,30 @@
 - Gemini / 兼容服务错误提示区分额度、空回复、流中错误和返回格式不兼容。
 - 保留 AI 筛选与招呼生成，移除独立对话侧栏；分享配置默认排除密钥和个人自由文本。
 
-## 安装
+## 其他附件
 
-下载附件中以 `-chrome.zip` 结尾的文件，解压后在 `chrome://extensions` 开启开发者模式，加载包含 `manifest.json` 的目录，再刷新 BOSS 页面。
+| 附件 | 用途 |
+| --- | --- |
+| `00-…-Chrome-Install.zip` | **普通用户下载这一项即可**，含已编译扩展和中文安装指南 |
+| `…-chrome.zip` | 同版纯扩展备用包，不含安装指南 |
+| `…-source.zip` / GitHub 自动生成的 Source code | 开发者源码，需要安装依赖并构建 |
+| `…-docs.zip` | 离线文档，可选 |
+| `…-SHA256SUMS.txt` | 下载完整性校验，可选 |
 
-需要源码时选择包含日志子模块的完整 `-source.zip`；GitHub 自动生成的 Source code 不能直接作为扩展加载。附件校验值见 SHA256SUMS 清单。
-
-更新已有安装请沿用原目录。首次运行建议从 1–3 个已核对的岗位开始；点击开始会执行真实沟通。
+更新已有安装请沿用原目录，再在扩展页面点击「重新加载」。点击开始会执行真实沟通。
 
 ## 验证与限制
 
-- 2026-10-02：124 项离线测试、498 个断言通过；Lint 和 Chrome 生产构建通过。
+- 2026-10-05 发布前验证：124 项离线测试、499 个断言通过；Lint 和 Chrome 生产构建通过。
 - 真实 BOSS 发送、收费模型和各 Gemini 中转服务仍需按具体环境验收。
 - 本轮续跑状态在当前标签页内存中，刷新后不能恢复同一轮队列；成功与去重记录另行持久化。
 - 后台请求取消需等待当前响应或配置超时；已发出的消息不能撤回。
 - 本次实际验证目标为 Chrome，Edge / Firefox 仍需独立验收。
 
 启用 AI 会将相关岗位、提示词和求职资料发送给所配置的服务商，API 费用由服务商收取。详细数据范围、安装方法及来源声明见仓库文档。
+
+[上传内容复审记录](https://github.com/az1412/boss-helper-jev/blob/main/docs/privacy-review-20261005.md)。扩展源码与安装产物对应发布提交 `ee4d0d95ea6a84677cc0347f0188fcef70d7496e`，新手包另附中文安装指南。
+
+## 来源与许可
+
+本项目基于 [Ocyss/boss-helper](https://github.com/Ocyss/boss-helper) 按 MIT 许可二次开发，增加 Jev 集成与工作流优化。感谢原项目及第三方维护者；完整版权与来源见 [LICENSE](https://github.com/az1412/boss-helper-jev/blob/main/LICENSE) 和 [第三方声明](https://github.com/az1412/boss-helper-jev/blob/main/THIRD_PARTY_NOTICES.md)。
