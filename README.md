@@ -6,7 +6,7 @@
 
 在 300 个岗位的受控离线对照中，Jev 快速模式将处理用时从 **42 分 58 秒缩短至 17 分 28 秒，减少 59.3%**。提升来自流程调度，完整条件与复现方法见下方性能对比。
 
-当前版本 **[0.5.2.3（预发布候选）](https://github.com/az1412/jev-job-helper/releases/tag/v0.5.2.3)**，以 Chrome 为主要验证目标。
+当前版本 **[0.5.2.3（预发布版）](https://github.com/az1412/jev-job-helper/releases/tag/v0.5.2.3)**，以 Chrome 为主要验证目标。
 
 **普通用户：[点击下载 Chrome 安装版](https://github.com/az1412/jev-job-helper/releases/download/v0.5.2.3/00-Jev-Job-Helper-0.5.2.3-Chrome-Install.zip)**。已经编译好；完整解压后双击 `先打开我-安装指南.html`，按中文步骤加载扩展，无需安装开发工具。
 
